@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# Build Path: /app/.heroku/php/
-# Build Deps: extensions/no-debug-non-zts-20121212/imagick-bare, libraries/imagemagick
 
-# That's it - we're combining the dep build and the extension build here
+dep_name=$(basename $BASH_SOURCE)
 
-echo "-----> Merging dependencies..."
-echo "-----> Done."
+source $(dirname $BASH_SOURCE)/../pecl
