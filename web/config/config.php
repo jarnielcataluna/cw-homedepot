@@ -29,10 +29,10 @@ if (ENV == "PROD") {
 } else {
     ini_set('display_errors', 1);
     // DB Params
-    define("DBHOST", "127.0.0.1");
-    define("DBNAME", "propelrr_cw");
-    define("DBUSER", "root");
-    define("DBPWD", "root");
-    define("DBPORT", "null");
+    define("DBHOST", "205.186.138.226");
+    define("DBNAME", "fb_messenger_test");
+    define("DBUSER", "fbmessenger");
+    define("DBPWD", "123fbmessenger@@");
+    define("DBPORT", "3306");
 
 }
