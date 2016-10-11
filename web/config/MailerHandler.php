@@ -88,7 +88,7 @@ class MailerHandler
         $body .= '                            <td>';
         $body .= '                                <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#ffffff" class="deviceWidth">';
         $body .= '                                    <tr>';
-        $body .= '                                        <td style="padding:0;"><img src="https://cw-homedepot-campaign.herokuapp.com/banner.jpg" alt="" width="100%" style=="display:block;" class="deviceWidth"></td>';
+        $body .= '                                        <td style="padding:0;"><img src="https://' . $_SERVER['HTTP_HOST'] . '/banner.jpg" alt="" width="100%" style=="display:block;" class="deviceWidth"></td>';
         $body .= '                                    </tr>';
         $body .= '                                </table>';
         $body .= '                            </td>';
@@ -115,7 +115,7 @@ class MailerHandler
         $body .= '                                            <table width="190" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#de0013">';
         $body .= '                                                <tr>';
         $body .= '                                                    <td style="padding:10px 10px; background: #FFFFFF;" align="center">';
-        $body .= '<img src="https://cw-homedepot-campaign.herokuapp.com/barcode-image.php?code= '. $data['code'] . '" alt="'. $data['code'] . '" style="width:100%;">';
+        $body .= '<img src="https://' . $_SERVER['HTTP_HOST'] . '/barcode-image.php?code= '. $data['code'] . '" alt="'. $data['code'] . '" style="width:100%;">';
         $body .= '                                                    </td>';
         $body .= '                                                </tr>';
         $body .= '                                            </table>';
@@ -142,7 +142,7 @@ class MailerHandler
         $body .= '                                <p style="font-family: Arial, Helvetica, sans-serif; color:#414042; font-size:15px; line-height: 18px; mso-table-lspace:0; mso-table-rspace:0; margin:0 0 15px 0; mso-line-height-rule:exactly; text-align:left; font-weight:normal;">Please be reminded that your discount code is valid for one-time use only. </p>';
         $body .= '                                <p style="font-family: Arial, Helvetica, sans-serif; color:#414042; font-size:15px; line-height: 18px; mso-table-lspace:0; mso-table-rspace:0; margin:0 0 15px 0; mso-line-height-rule:exactly; text-align:left; font-weight:normal;">Happy shopping!  </p>';
         $body .= '                                <p style="font-family: Arial, Helvetica, sans-serif; color:#414042; font-size:15px; line-height: 18px; mso-table-lspace:0; mso-table-rspace:0; margin:0 0 15px 0; mso-line-height-rule:exactly; text-align:left; font-weight:normal;">Looking forward to building and improving more homes. </p>';
-        $body .= '                                <img src="https://cw-homedepot-campaign.herokuapp.com/logo.png" alt="">';
+        $body .= '                                <img src="https://' . $_SERVER['HTTP_HOST'] . '/logo.png" alt="">';
         $body .= '                                <p style="font-family: Arial, Helvetica, sans-serif; color:#414042; font-size:15px; line-height: 18px; mso-table-lspace:0; mso-table-rspace:0; margin:10px 0 15px 0; mso-line-height-rule:exactly; text-align:left; font-weight:normal;">CW Home Depot</p>';
         $body .= '                            </td>';
         $body .= '                        </tr>';
@@ -160,9 +160,9 @@ class MailerHandler
         $body .= '                                <table width="200" cellpadding="0" cellspacing="0" align="right" valign="center" class="deviceWidth">';
         $body .= '                                    <tr>';
         $body .= '                                         <td style="padding:0; text-align: right;">';
-        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://cw-homedepot-campaign.herokuapp.com/icon-fb.png" alt="" style="display: block;"></a>';
-        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://cw-homedepot-campaign.herokuapp.com/icon-twitter.png" alt="" style="display: block;"></a>';
-        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://cw-homedepot-campaign.herokuapp.com/icon-linkedin.png" alt="" style="display: block;"></a>';
+        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://' . $_SERVER['HTTP_HOST'] . '/icon-fb.png" alt="" style="display: block;"></a>';
+        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://' . $_SERVER['HTTP_HOST'] . '/icon-twitter.png" alt="" style="display: block;"></a>';
+        $body .= '                                            <a href="#" style="display: inline-block; margin: 0px 3px;"><img src="https://' . $_SERVER['HTTP_HOST'] . '/icon-linkedin.png" alt="" style="display: block;"></a>';
         $body .= '                                        </td>';
         $body .= '                                    </tr>';
         $body .= '                                </table>';
@@ -177,7 +177,7 @@ class MailerHandler
 
 
         $message = Swift_Message::newInstance('Enjoy 10% discount at CW Home Depot')
-            ->setFrom(array('cwhomedepotph.com' => '12 Years Get 10% Discount'))
+            ->setFrom(array('cwhomedepotph@gmail.com' => '12 Years Get 10% Discount'))
             ->setTo($data['email'])
             ->setBody($body, 'text/html');
 
