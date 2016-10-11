@@ -176,8 +176,8 @@ class MailerHandler
         $body .= '</html>';
 
 
-        $message = Swift_Message::newInstance('30% discount at Res-Toe-Run or ROX')
-            ->setFrom(array('freewaters.philippines@gmail.com' => 'Shoe or False? Quiz'))
+        $message = Swift_Message::newInstance('Enjoy 10% discount at CW Home Depot')
+            ->setFrom(array('cwhomedepotph.com' => '12 Years Get 10% Discount'))
             ->setTo($data['email'])
             ->setBody($body, 'text/html');
 
